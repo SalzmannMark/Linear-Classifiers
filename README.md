@@ -34,12 +34,7 @@ The notebook first uses a reproducible 60/40 train/test split (random_state=2) f
 
 For labels mapped to $y_i\in\{-1,+1\}$, the custom SVM minimises
 
-$$
-\mathcal{L}(\mathbf w,b)
-= \frac{1}{2}\lVert\mathbf w\rVert_2^2
-+ \frac{\lambda}{N}\sum_{i=1}^{N}
-\max\!\left(0,\,1-y_i(\mathbf w^\top\mathbf x_i+b)\right).
-$$
+$$ \mathcal{L}(\mathbf w,b) = \frac{1}{2}\lVert\mathbf w\rVert_2^2 + \frac{\lambda}{N}\sum_{i=1}^{N} \max\!\left(0,\,1-y_i(\mathbf w^\top\mathbf x_i+b)\right). $$
 
 Features are standardised using training-set statistics before optimisation. The notebook sweeps $\lambda$ over a fixed grid and records train/test errors across repeated stratified splits.
 
